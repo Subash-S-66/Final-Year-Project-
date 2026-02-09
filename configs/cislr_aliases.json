@@ -1,0 +1,61 @@
+{
+  "FAMILY": [
+    "family",
+    "parent",
+    "parents",
+    "mother",
+    "father",
+    "mother father",
+    "mother+father",
+    "mom",
+    "dad",
+    "mom+dad"
+  ],
+  "HELLO": [
+    "hello",
+    "hi",
+    "hey"
+  ],
+  "GOOD_MORNING": [
+    "good morning",
+    "goodmorning",
+    "morning"
+  ],
+  "GOOD_NIGHT": [
+    "good night",
+    "goodnight",
+    "night"
+  ],
+  "HOME": [
+    "home",
+    "house"
+  ],
+  "MEDICINE": [
+    "medicine",
+    "med",
+    "drug",
+    "drugs",
+    "tablet",
+    "tablets",
+    "pill",
+    "pills"
+  ],
+  "DOCTOR": [
+    "doctor",
+    "physician"
+  ],
+  "THIRSTY": [
+    "thirsty",
+    "thirst"
+  ],
+  "I_LOVE_YOU": [
+    "i love you",
+    "iloveyou",
+    "ily"
+  ],
+  "THANK_YOU": [
+    "thankyou",
+    "thanks",
+    "thank you"
+  ]
+}

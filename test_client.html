@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISL ONNX WS Test Client</title>
+  <style>
+    body { font-family: system-ui, Segoe UI, Arial, sans-serif; margin: 16px; }
+    .row { display: flex; gap: 16px; align-items: start; flex-wrap: wrap; }
+    video, canvas { width: 480px; max-width: 100%; border: 1px solid #ddd; border-radius: 8px; }
+    pre { background: #0b1020; color: #e6edf3; padding: 12px; border-radius: 8px; overflow: auto; max-width: 720px; }
+    button { padding: 8px 12px; }
+    .kv { display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; margin: 12px 0; }
+    .muted { color: #555; }
+  </style>
+</head>
+<body>
+  <h2>Real-time ISL → Text (ONNXRuntime) </h2>
+  <div class="muted">Sends JPEG frames to <code>ws://localhost:8000/ws</code> and prints token + confidence.</div>
+
+  <div style="margin: 12px 0;">
+    <label>
+      WS URL:
+      <input id="wsUrl" style="width: 360px" value="ws://localhost:8000/ws" />
+    </label>
+  </div>
+
+  <div style="margin: 12px 0;">
+    <button id="btnStart">Start</button>
+    <button id="btnStop" disabled>Stop</button>
+  </div>
+
+  <div class="kv">
+    <div>WebSocket</div><div><span id="wsState">DISCONNECTED</span></div>
+    <div>Last token</div><div><strong id="token">-</strong></div>
+    <div>Confidence</div><div><span id="conf">-</span></div>
+    <div>Latency (ms)</div><div><span id="lat">-</span></div>
+    <div>Committed</div><div><span id="comm">-</span></div>
+    <div>FPS (send)</div><div><span id="fps">-</span></div>
+  </div>
+
+  <div class="row">
+    <div>
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="canvas" style="display:none"></canvas>
+    </div>
+    <div>
+      <pre id="log"></pre>
+    </div>
+  </div>
+
+<script>
+(function () {
+  const wsUrlInput = document.getElementById('wsUrl');
+  const TARGET_FPS = 10;      // keep it light; backend does MediaPipe + ONNX
+  const JPEG_QUALITY = 0.7;   // 0..1
+  const MAX_INFLIGHT = 1;     // prevent queue buildup
+
+  const el = (id) => document.getElementById(id);
+  const wsState = el('wsState');
+  const tokenEl = el('token');
+  const confEl = el('conf');
+  const latEl = el('lat');
+  const commEl = el('comm');
+  const fpsEl = el('fps');
+  const logEl = el('log');
+  const video = el('video');
+  const canvas = el('canvas');
+  const btnStart = el('btnStart');
+  const btnStop = el('btnStop');
+
+  let ws = null;
+  let stream = null;
+  let timer = null;
+  let inflight = 0;
+  let sentFrames = 0;
+  let lastFpsTs = performance.now();
+
+  function log(line) {
+    const ts = new Date().toISOString().split('T')[1].replace('Z','');
+    logEl.textContent = `[${ts}] ${line}\n` + logEl.textContent;
+  }
+
+  function setWsState(s) {
+    wsState.textContent = s;
+  }
+
+  async function start() {
+    btnStart.disabled = true;
+    btnStop.disabled = false;
+
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 }, audio: false });
+      video.srcObject = stream;
+      await video.play();
+
+      canvas.width = video.videoWidth || 640;
+      canvas.height = video.videoHeight || 480;
+
+      ws = new WebSocket(wsUrlInput.value);
+      ws.binaryType = 'arraybuffer';
+
+      ws.onopen = () => {
+        setWsState('CONNECTED');
+        log('WebSocket connected');
+      };
+
+      ws.onclose = () => {
+        setWsState('DISCONNECTED');
+        log('WebSocket closed');
+        stop();
+      };
+
+      ws.onerror = (e) => {
+        setWsState('ERROR');
+        log('WebSocket error');
+      };
+
+      ws.onmessage = (evt) => {
+        inflight = Math.max(0, inflight - 1);
+        try {
+          const msg = JSON.parse(evt.data);
+          if (msg.type === 'prediction') {
+            tokenEl.textContent = msg.token;
+            confEl.textContent = (msg.confidence ?? 0).toFixed(3);
+            latEl.textContent = String(msg.latency_ms ?? '-');
+            commEl.textContent = String(!!msg.is_committed);
+          } else if (msg.type === 'error') {
+            log(`ERROR: ${msg.message}`);
+          } else {
+            log(`MSG: ${evt.data}`);
+          }
+        } catch {
+          log(`RAW: ${evt.data}`);
+        }
+      };
+
+      const intervalMs = Math.round(1000 / TARGET_FPS);
+      timer = setInterval(captureAndSend, intervalMs);
+    } catch (err) {
+      log(`Failed to start: ${err}`);
+      stop();
+    }
+  }
+
+  function stop() {
+    btnStart.disabled = false;
+    btnStop.disabled = true;
+
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    if (ws) {
+      try { ws.close(); } catch {}
+      ws = null;
+    }
+
+    if (stream) {
+      for (const t of stream.getTracks()) t.stop();
+      stream = null;
+    }
+
+    setWsState('DISCONNECTED');
+    inflight = 0;
+  }
+
+  function captureAndSend() {
+    if (!ws || ws.readyState !== WebSocket.OPEN) return;
+    if (!video.videoWidth || !video.videoHeight) return;
+    if (inflight >= MAX_INFLIGHT) return;
+
+    const ctx = canvas.getContext('2d', { willReadFrequently: false });
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    inflight += 1;
+    canvas.toBlob(async (blob) => {
+      try {
+        if (!blob) { inflight = Math.max(0, inflight - 1); return; }
+        const buf = await blob.arrayBuffer();
+        ws.send(buf);
+
+        sentFrames += 1;
+        const now = performance.now();
+        if (now - lastFpsTs >= 1000) {
+          const fps = sentFrames / ((now - lastFpsTs) / 1000);
+          fpsEl.textContent = fps.toFixed(1);
+          sentFrames = 0;
+          lastFpsTs = now;
+        }
+      } catch (e) {
+        inflight = Math.max(0, inflight - 1);
+        log(`Send failed: ${e}`);
+      }
+    }, 'image/jpeg', JPEG_QUALITY);
+  }
+
+  btnStart.addEventListener('click', start);
+  btnStop.addEventListener('click', stop);
+})();
+</script>
+</body>
+</html>

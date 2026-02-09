@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+ENV/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs
+*.log
+
+# Node / React
+node_modules/
+dist/
+build/
+.env
+.env.*
+
+# Data / models (keep structure, not huge binaries)
+data/**
+!data/.gitkeep
+models/**
+!models/.gitkeep

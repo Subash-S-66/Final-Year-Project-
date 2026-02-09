@@ -1,0 +1,12 @@
+fastapi==0.115.6
+uvicorn[standard]==0.30.6
+pydantic==2.10.4
+pydantic-settings==2.7.0
+numpy==1.26.4
+opencv-python==4.10.0.84
+
+# Landmark extraction
+mediapipe==0.10.20
+
+# Inference (later phases)
+onnxruntime==1.20.1

@@ -1,0 +1,17 @@
+scikit-learn==1.5.2
+joblib==1.4.2
+numpy==1.26.4
+tqdm==4.66.5
+onnx==1.16.2
+onnxruntime==1.20.1
+onnxscript
+
+# Training
+torch
+PyYAML
+matplotlib
+
+# Dataset download (HuggingFace Datasets API)
+datasets==2.21.0
+huggingface-hub==0.24.7
+requests==2.32.3

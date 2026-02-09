@@ -1,0 +1,96 @@
+{
+  "checkpoint": "C:\\Users\\subash\\projects\\collage\\reports\\checkpoints\\lstm_best.pt",
+  "onnx": "C:\\Users\\subash\\projects\\collage\\artifacts\\model_lstm_v1.onnx",
+  "T": 30,
+  "F": 263,
+  "num_classes": 51,
+  "vocab": [
+    "NO_SIGN",
+    "HELLO",
+    "GOOD_MORNING",
+    "GOOD_NIGHT",
+    "THANK_YOU",
+    "PLEASE",
+    "SORRY",
+    "YES",
+    "NO",
+    "HELP",
+    "STOP",
+    "WAIT",
+    "COME",
+    "GO",
+    "ME",
+    "YOU",
+    "WE",
+    "MY",
+    "YOUR",
+    "NAME",
+    "WHAT",
+    "WHERE",
+    "WHEN",
+    "WHY",
+    "HOW",
+    "THIS",
+    "THAT",
+    "HERE",
+    "THERE",
+    "NOW",
+    "TODAY",
+    "TOMORROW",
+    "YESTERDAY",
+    "TIME",
+    "WATER",
+    "FOOD",
+    "HUNGRY",
+    "THIRSTY",
+    "TOILET",
+    "HOME",
+    "SCHOOL",
+    "WORK",
+    "FRIEND",
+    "FAMILY",
+    "DOCTOR",
+    "PAIN",
+    "MEDICINE",
+    "EMERGENCY",
+    "GOOD",
+    "BAD",
+    "I_LOVE_YOU"
+  ],
+  "config": {
+    "seed": 42,
+    "data": {
+      "root": "data/processed/cislr",
+      "vocab": "configs/vocab_v1_51.json",
+      "split": {
+        "val_ratio": 0.2,
+        "seed": 42
+      }
+    },
+    "model": {
+      "hidden_dim": 256,
+      "num_layers": 2,
+      "dropout": 0.2,
+      "bidirectional": false
+    },
+    "train": {
+      "epochs": 50,
+      "batch_size": 16,
+      "lr": 0.0003,
+      "weight_decay": 0.01,
+      "patience": 10,
+      "num_workers": 0
+    },
+    "runtime": {
+      "device": "auto"
+    },
+    "outputs": {
+      "checkpoints_dir": "reports/checkpoints",
+      "run_dir": "reports/train_lstm_run",
+      "log_csv": "reports/train_lstm_log.csv",
+      "curves_png": "reports/train_lstm_curves.png",
+      "confusion_png": "reports/train_lstm_confusion.png",
+      "metrics_json": "reports/train_lstm_metrics.json"
+    }
+  }
+}
