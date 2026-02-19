@@ -24,10 +24,24 @@
       <input id="wsUrl" style="width: 360px" value="ws://localhost:8000/ws" />
     </label>
   </div>
+  <div style="margin: 12px 0;">
+    <label>Video file:
+      <input id="videoFile" type="file" accept="video/*" />
+    </label>
+    <label style="margin-left: 12px;">
+      Sample FPS:
+      <input id="uploadFps" type="number" min="1" max="30" value="15" style="width: 70px;" />
+    </label>
+    <button id="btnUpload">Upload Test</button>
+  </div>
 
   <div style="margin: 12px 0;">
     <button id="btnStart">Start</button>
     <button id="btnStop" disabled>Stop</button>
+    <label style="margin-left: 12px;">
+      <input id="unmirror" type="checkbox" checked />
+      Un-mirror camera
+    </label>
   </div>
 
   <div class="kv">
@@ -52,7 +66,7 @@
 <script>
 (function () {
   const wsUrlInput = document.getElementById('wsUrl');
-  const TARGET_FPS = 10;      // keep it light; backend does MediaPipe + ONNX
+  const TARGET_FPS = 15;      // match training extraction FPS
   const JPEG_QUALITY = 0.7;   // 0..1
   const MAX_INFLIGHT = 1;     // prevent queue buildup
 
@@ -68,6 +82,10 @@
   const canvas = el('canvas');
   const btnStart = el('btnStart');
   const btnStop = el('btnStop');
+  const btnUpload = el('btnUpload');
+  const videoFile = el('videoFile');
+  const uploadFps = el('uploadFps');
+  const unmirror = el('unmirror');
 
   let ws = null;
   let stream = null;
@@ -75,6 +93,8 @@
   let inflight = 0;
   let sentFrames = 0;
   let lastFpsTs = performance.now();
+  let lastNonNoSignToken = '-';
+  let lastNonNoSignConf = 0;
 
   function log(line) {
     const ts = new Date().toISOString().split('T')[1].replace('Z','');
@@ -85,6 +105,12 @@
     wsState.textContent = s;
   }
 
+  function wsToHttpBase(wsUrl) {
+    const u = new URL(wsUrl);
+    const protocol = u.protocol === 'wss:' ? 'https:' : 'http:';
+    return `${protocol}//${u.host}`;
+  }
+
   async function start() {
     btnStart.disabled = true;
     btnStop.disabled = false;
@@ -93,6 +119,7 @@
       stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 }, audio: false });
       video.srcObject = stream;
       await video.play();
+      applyVideoTransform();
 
       canvas.width = video.videoWidth || 640;
       canvas.height = video.videoHeight || 480;
@@ -121,10 +148,36 @@
         try {
           const msg = JSON.parse(evt.data);
           if (msg.type === 'prediction') {
-            tokenEl.textContent = msg.token;
-            confEl.textContent = (msg.confidence ?? 0).toFixed(3);
+            const token = String(msg.token ?? 'NO_SIGN');
+            const conf = Number(msg.confidence ?? 0);
+            const vote = Number(msg.debug?.vote_ratio ?? 0);
+
+            if (token !== 'NO_SIGN') {
+              lastNonNoSignToken = token;
+              lastNonNoSignConf = conf;
+            }
+
+            const shownToken =
+              token === 'NO_SIGN'
+                ? (lastNonNoSignToken === '-' ? 'NO_SIGN' : lastNonNoSignToken)
+                : token;
+            const shownConf =
+              token === 'NO_SIGN'
+                ? (lastNonNoSignToken === '-' ? conf : lastNonNoSignConf)
+                : conf;
+
+            tokenEl.textContent = shownToken;
+            confEl.textContent = Number(shownConf).toFixed(3);
             latEl.textContent = String(msg.latency_ms ?? '-');
             commEl.textContent = String(!!msg.is_committed);
+            const hands = !!msg.debug?.has_hands;
+            const hr = Number(msg.debug?.window_hand_presence_ratio ?? 0);
+            const mot = Number(msg.debug?.window_motion_score ?? 0);
+            const gate = msg.debug?.live_gate_ok;
+            log(`live=${token} (${conf.toFixed(3)}) vote=${vote.toFixed(2)} hands=${hands ? 1 : 0} hr=${hr.toFixed(2)} mot=${mot.toFixed(3)} gate=${gate === undefined ? '-' : (gate ? 1 : 0)}`);
+            if (msg.is_committed) {
+              log(`commit=${msg.token} conf=${(msg.confidence ?? 0).toFixed(3)} vote=${(msg.debug?.vote_ratio ?? 0).toFixed(2)}`);
+            }
           } else if (msg.type === 'error') {
             log(`ERROR: ${msg.message}`);
           } else {
@@ -166,13 +219,68 @@
     inflight = 0;
   }
 
+  async function uploadVideoTest() {
+    const f = videoFile.files && videoFile.files[0];
+    if (!f) {
+      log('Pick a video file first.');
+      return;
+    }
+
+    const sampleFps = Number(uploadFps.value || 15);
+    const base = wsToHttpBase(wsUrlInput.value);
+    const endpoint = `${base}/predict/video?sample_fps=${encodeURIComponent(sampleFps)}&max_frames=600`;
+
+    const form = new FormData();
+    form.append('file', f, f.name);
+
+    btnUpload.disabled = true;
+    try {
+      log(`Uploading: ${f.name}`);
+      const res = await fetch(endpoint, { method: 'POST', body: form });
+      const text = await res.text();
+      let data = null;
+      try { data = JSON.parse(text); } catch { data = { raw: text }; }
+
+      if (!res.ok) {
+        log(`Upload test failed: HTTP ${res.status} ${JSON.stringify(data)}`);
+        return;
+      }
+
+      tokenEl.textContent = data.committed_token || data.final_token || '-';
+      confEl.textContent = Number(data.committed_confidence ?? data.final_confidence ?? 0).toFixed(3);
+      const upToken = String(data.committed_token || data.final_token || 'NO_SIGN');
+      const upConf = Number(data.committed_confidence ?? data.final_confidence ?? 0);
+      if (upToken !== 'NO_SIGN') {
+        lastNonNoSignToken = upToken;
+        lastNonNoSignConf = upConf;
+      } else {
+        tokenEl.textContent = (lastNonNoSignToken === '-') ? 'NO_SIGN' : lastNonNoSignToken;
+        confEl.textContent = Number((lastNonNoSignToken === '-') ? upConf : lastNonNoSignConf).toFixed(3);
+      }
+      latEl.textContent = '-';
+      commEl.textContent = 'true';
+
+      const inferredWindows = Number(data.inferred_windows ?? 0);
+      const note = data.note ? ` note="${data.note}"` : '';
+      log(
+        `upload result: committed=${data.committed_token} (${Number(data.committed_confidence ?? 0).toFixed(3)}) ` +
+        `final=${data.final_token} (${Number(data.final_confidence ?? 0).toFixed(3)}) ` +
+        `sampled=${data.sampled_frames} windows=${inferredWindows}${note}`
+      );
+    } catch (e) {
+      log(`Upload error: ${e}`);
+    } finally {
+      btnUpload.disabled = false;
+    }
+  }
+
   function captureAndSend() {
     if (!ws || ws.readyState !== WebSocket.OPEN) return;
     if (!video.videoWidth || !video.videoHeight) return;
     if (inflight >= MAX_INFLIGHT) return;
 
     const ctx = canvas.getContext('2d', { willReadFrequently: false });
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    drawToCanvas(ctx);
 
     inflight += 1;
     canvas.toBlob(async (blob) => {
@@ -196,8 +304,26 @@
     }, 'image/jpeg', JPEG_QUALITY);
   }
 
+  function applyVideoTransform() {
+    video.style.transform = unmirror.checked ? 'scaleX(-1)' : 'none';
+  }
+
+  function drawToCanvas(ctx) {
+    if (unmirror.checked) {
+      ctx.save();
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      ctx.restore();
+      return;
+    }
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  }
+
   btnStart.addEventListener('click', start);
   btnStop.addEventListener('click', stop);
+  btnUpload.addEventListener('click', uploadVideoTest);
+  unmirror.addEventListener('change', applyVideoTransform);
 })();
 </script>
 </body>

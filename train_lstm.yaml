@@ -12,6 +12,8 @@ data:
   split:
     val_ratio: 0.20
     seed: 42
+    min_train_per_label: 2
+    min_val_per_label: 1
 
 model:
   hidden_dim: 256
@@ -20,12 +22,25 @@ model:
   bidirectional: false
 
 train:
-  epochs: 50
-  batch_size: 16
-  lr: 0.0003
+  epochs: 80
+  batch_size: 12
+  lr: 0.0002
   weight_decay: 0.01
-  patience: 10
+  label_smoothing: 0.05
+  class_weight_power: 0.7
+  grad_clip_norm: 1.0
+  temperature_max_iter: 100
+  patience: 14
   num_workers: 0   # Windows-safe
+
+preprocess:
+  enable_ema: true
+  ema_alpha: 0.65
+  per_frame_rms_norm: true
+  per_sequence_zscore: true
+  enable_delta: true
+  clip_value: 6.0
+  eps: 1.0e-5
 
 runtime:
   device: auto      # auto|cpu|cuda
@@ -37,3 +52,4 @@ outputs:
   curves_png: reports/train_lstm_curves.png
   confusion_png: reports/train_lstm_confusion.png
   metrics_json: reports/train_lstm_metrics.json
+  analysis_json: reports/train_lstm_analysis.json

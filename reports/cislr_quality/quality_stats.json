@@ -1,0 +1,186 @@
+{
+  "src": "C:\\Users\\subash\\projects\\collage\\data\\raw\\cislr\\videos_unfiltered",
+  "dst": "C:\\Users\\subash\\projects\\collage\\data\\raw\\cislr\\videos",
+  "total_scanned": 101,
+  "kept": 83,
+  "rejected": 18,
+  "labels_with_kept_samples": 41,
+  "duplicate_hash_groups": 0,
+  "thresholds": {
+    "min_width": 280,
+    "min_height": 280,
+    "min_frames": 12,
+    "min_duration_s": 0.7,
+    "max_duration_s": 7.0,
+    "min_blur": 45.0,
+    "min_contrast": 38.0,
+    "min_motion": 1.2,
+    "keep_per_label": 4
+  },
+  "label_stats": {
+    "BAD": {
+      "kept": 4,
+      "mean_score": 0.27818635749400555
+    },
+    "COME": {
+      "kept": 1,
+      "mean_score": 0.30663321408974364
+    },
+    "EMERGENCY": {
+      "kept": 1,
+      "mean_score": 0.5063661056832307
+    },
+    "FAMILY": {
+      "kept": 4,
+      "mean_score": 0.26076623979628144
+    },
+    "FOOD": {
+      "kept": 1,
+      "mean_score": 0.2931000654475279
+    },
+    "FRIEND": {
+      "kept": 1,
+      "mean_score": 0.3141541706938834
+    },
+    "GO": {
+      "kept": 1,
+      "mean_score": 0.3394746077328886
+    },
+    "GOOD": {
+      "kept": 4,
+      "mean_score": 0.2920677465488396
+    },
+    "GOOD_MORNING": {
+      "kept": 3,
+      "mean_score": 0.3062371757499533
+    },
+    "GOOD_NIGHT": {
+      "kept": 3,
+      "mean_score": 0.3427001759085257
+    },
+    "HELP": {
+      "kept": 1,
+      "mean_score": 0.2894967677659725
+    },
+    "HOME": {
+      "kept": 1,
+      "mean_score": 0.33741267358415394
+    },
+    "HUNGRY": {
+      "kept": 1,
+      "mean_score": 0.3643392056418064
+    },
+    "ME": {
+      "kept": 1,
+      "mean_score": 0.3404331749642407
+    },
+    "MEDICINE": {
+      "kept": 4,
+      "mean_score": 0.3862988396422422
+    },
+    "MY": {
+      "kept": 1,
+      "mean_score": 0.300188805379214
+    },
+    "NAME": {
+      "kept": 4,
+      "mean_score": 0.3467293078936345
+    },
+    "NO": {
+      "kept": 1,
+      "mean_score": 0.3510937610553281
+    },
+    "NOW": {
+      "kept": 1,
+      "mean_score": 0.2892431591088982
+    },
+    "PAIN": {
+      "kept": 4,
+      "mean_score": 0.30792596126461025
+    },
+    "PLEASE": {
+      "kept": 2,
+      "mean_score": 0.37428020345397167
+    },
+    "SCHOOL": {
+      "kept": 1,
+      "mean_score": 0.3494016487010708
+    },
+    "SORRY": {
+      "kept": 3,
+      "mean_score": 0.3040048966244559
+    },
+    "STOP": {
+      "kept": 2,
+      "mean_score": 0.3512907893135935
+    },
+    "THANK_YOU": {
+      "kept": 4,
+      "mean_score": 0.32440057801912914
+    },
+    "THAT": {
+      "kept": 1,
+      "mean_score": 0.33714610208298373
+    },
+    "THERE": {
+      "kept": 1,
+      "mean_score": 0.34428350030301574
+    },
+    "THIS": {
+      "kept": 1,
+      "mean_score": 0.3095481736036345
+    },
+    "TIME": {
+      "kept": 2,
+      "mean_score": 0.36772591315808323
+    },
+    "TODAY": {
+      "kept": 2,
+      "mean_score": 0.358874771411056
+    },
+    "TOILET": {
+      "kept": 1,
+      "mean_score": 0.25587348686441425
+    },
+    "TOMORROW": {
+      "kept": 2,
+      "mean_score": 0.3275400901488872
+    },
+    "WAIT": {
+      "kept": 3,
+      "mean_score": 0.34116569826881515
+    },
+    "WATER": {
+      "kept": 3,
+      "mean_score": 0.2731843523397977
+    },
+    "WE": {
+      "kept": 1,
+      "mean_score": 0.3238373680175365
+    },
+    "WHY": {
+      "kept": 1,
+      "mean_score": 0.4047601940040479
+    },
+    "WORK": {
+      "kept": 4,
+      "mean_score": 0.35516144472230304
+    },
+    "YES": {
+      "kept": 1,
+      "mean_score": 0.36051249934487944
+    },
+    "YESTERDAY": {
+      "kept": 2,
+      "mean_score": 0.29204668625458136
+    },
+    "YOU": {
+      "kept": 2,
+      "mean_score": 0.3136508226000434
+    },
+    "YOUR": {
+      "kept": 2,
+      "mean_score": 0.3190267818971789
+    }
+  }
+}

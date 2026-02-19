@@ -1,0 +1,482 @@
+{
+  "class_weight_formula": "w_c = (N / (K * n_c))^power, n_c>0 else 0; then normalize mean(w_seen)=1",
+  "class_weight_power": 0.7,
+  "label_smoothing": 0.05,
+  "temperature": 0.9005638360977173,
+  "calibration": {
+    "temperature": 0.9005638360977173,
+    "nll_before": 0.8092434406280518,
+    "nll_after": 0.8006809949874878
+  },
+  "acceptance": {
+    "global_conf": 0.7,
+    "global_margin": 0.25,
+    "class_conf": [
+      0.800000011920929,
+      0.699999988079071,
+      0.6694433689117432,
+      0.6299999952316284,
+      0.699999988079071,
+      0.699999988079071,
+      0.800000011920929,
+      0.6299999952316284,
+      0.6299999952316284,
+      0.7008652091026306,
+      0.699999988079071,
+      0.6299999952316284,
+      0.668765127658844,
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929,
+      0.7929286360740662,
+      0.6299999952316284,
+      0.7976760864257812,
+      0.699999988079071,
+      0.699999988079071,
+      0.699999988079071,
+      0.699999988079071,
+      0.699999988079071,
+      0.800000011920929,
+      0.699999988079071,
+      0.699999988079071,
+      0.699999988079071,
+      0.800000011920929
+    ],
+    "class_margin": [
+      0.3499999940395355,
+      0.25,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.25,
+      0.25,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.21250000596046448,
+      0.3499999940395355,
+      0.25,
+      0.21250000596046448,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.3499999940395355,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.3499999940395355,
+      0.25,
+      0.25,
+      0.25,
+      0.3499999940395355
+    ],
+    "tp_total": 87,
+    "fp_total": 22
+  },
+  "val_collapse": {
+    "dominant_ratio": 0.05504587155963303,
+    "dominant_class": 2,
+    "predicted_label_count": 30,
+    "normalized_entropy": 0.9865918713777458,
+    "is_collapsed": false
+  },
+  "prediction_dominance": [
+    {
+      "token": "GOOD_NIGHT",
+      "count": 6,
+      "ratio": 0.05504587155963303
+    },
+    {
+      "token": "MOTHER",
+      "count": 6,
+      "ratio": 0.05504587155963303
+    },
+    {
+      "token": "RESTAURANT",
+      "count": 6,
+      "ratio": 0.05504587155963303
+    },
+    {
+      "token": "HELLO",
+      "count": 5,
+      "ratio": 0.045871559633027525
+    },
+    {
+      "token": "WE",
+      "count": 5,
+      "ratio": 0.045871559633027525
+    },
+    {
+      "token": "THANK_YOU",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "FATHER",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "BROTHER",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "HOUSE",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "SCHOOL",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "HOSPITAL",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "OFFICE",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "BANK",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "MEDICINE",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "BOOK",
+      "count": 4,
+      "ratio": 0.03669724770642202
+    },
+    {
+      "token": "I",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "YOU",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "SISTER",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "FRIEND",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "FAMILY",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "MARKET",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "TOMORROW",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "YESTERDAY",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "TIME",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "TELEPHONE",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "BATHROOM",
+      "count": 3,
+      "ratio": 0.027522935779816515
+    },
+    {
+      "token": "GOOD_MORNING",
+      "count": 2,
+      "ratio": 0.01834862385321101
+    },
+    {
+      "token": "TODAY",
+      "count": 2,
+      "ratio": 0.01834862385321101
+    },
+    {
+      "token": "DOCTOR",
+      "count": 2,
+      "ratio": 0.01834862385321101
+    },
+    {
+      "token": "MONEY",
+      "count": 2,
+      "ratio": 0.01834862385321101
+    }
+  ],
+  "per_label_confidence": {
+    "HELLO": {
+      "true_count": 4,
+      "pred_count": 5,
+      "true_conf_mean": 0.9444299936294556,
+      "true_conf_p90": 0.9750587105751037,
+      "pred_conf_mean": 0.8506413698196411,
+      "pred_conf_p90": 0.9743243932724
+    },
+    "GOOD_MORNING": {
+      "true_count": 4,
+      "pred_count": 2,
+      "true_conf_mean": 0.5519199371337891,
+      "true_conf_p90": 0.895015037059784,
+      "pred_conf_mean": 0.8403928875923157,
+      "pred_conf_p90": 0.9496371865272522
+    },
+    "GOOD_NIGHT": {
+      "true_count": 4,
+      "pred_count": 6,
+      "true_conf_mean": 0.8601274490356445,
+      "true_conf_p90": 0.9849672019481659,
+      "pred_conf_mean": 0.8060486316680908,
+      "pred_conf_p90": 0.9815349876880646
+    },
+    "THANK_YOU": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.8392379283905029,
+      "true_conf_p90": 0.9813549816608429,
+      "pred_conf_mean": 0.8392379283905029,
+      "pred_conf_p90": 0.9813549816608429
+    },
+    "I": {
+      "true_count": 4,
+      "pred_count": 3,
+      "true_conf_mean": 0.14278267323970795,
+      "true_conf_p90": 0.33948363363742834,
+      "pred_conf_mean": 0.635108470916748,
+      "pred_conf_p90": 0.7433224797248841
+    },
+    "YOU": {
+      "true_count": 4,
+      "pred_count": 3,
+      "true_conf_mean": 0.280472069978714,
+      "true_conf_p90": 0.42613301873207093,
+      "pred_conf_mean": 0.7056931853294373,
+      "pred_conf_p90": 0.8229711413383484
+    },
+    "WE": {
+      "true_count": 4,
+      "pred_count": 5,
+      "true_conf_mean": 0.9721189737319946,
+      "true_conf_p90": 0.9802074909210206,
+      "pred_conf_mean": 0.8629583120346069,
+      "pred_conf_p90": 0.9797854065895081
+    },
+    "MOTHER": {
+      "true_count": 4,
+      "pred_count": 6,
+      "true_conf_mean": 0.8150709867477417,
+      "true_conf_p90": 0.9743433177471161,
+      "pred_conf_mean": 0.7671179175376892,
+      "pred_conf_p90": 0.9921006858348846
+    },
+    "FATHER": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.6042290925979614,
+      "true_conf_p90": 0.7937242686748505,
+      "pred_conf_mean": 0.6042290925979614,
+      "pred_conf_p90": 0.7937242686748505
+    },
+    "BROTHER": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.5971559882164001,
+      "true_conf_p90": 0.8734679818153381,
+      "pred_conf_mean": 0.7139885425567627,
+      "pred_conf_p90": 0.8734679818153381
+    },
+    "SISTER": {
+      "true_count": 4,
+      "pred_count": 3,
+      "true_conf_mean": 0.557100236415863,
+      "true_conf_p90": 0.868449902534485,
+      "pred_conf_mean": 0.8709132075309753,
+      "pred_conf_p90": 0.9419642686843872
+    },
+    "FRIEND": {
+      "true_count": 4,
+      "pred_count": 3,
+      "true_conf_mean": 0.40874752402305603,
+      "true_conf_p90": 0.7153300344944,
+      "pred_conf_mean": 0.5435997843742371,
+      "pred_conf_p90": 0.7282007932662964
+    },
+    "FAMILY": {
+      "true_count": 3,
+      "pred_count": 3,
+      "true_conf_mean": 0.830962598323822,
+      "true_conf_p90": 0.9509133696556091,
+      "pred_conf_mean": 0.830962598323822,
+      "pred_conf_p90": 0.9509133696556091
+    },
+    "HOUSE": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.9052910208702087,
+      "true_conf_p90": 0.952838784456253,
+      "pred_conf_mean": 0.9052910208702087,
+      "pred_conf_p90": 0.952838784456253
+    },
+    "SCHOOL": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.939773440361023,
+      "true_conf_p90": 0.9688353717327118,
+      "pred_conf_mean": 0.939773440361023,
+      "pred_conf_p90": 0.9688353717327118
+    },
+    "HOSPITAL": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.9673622846603394,
+      "true_conf_p90": 0.9855405807495117,
+      "pred_conf_mean": 0.9673622846603394,
+      "pred_conf_p90": 0.9855405807495117
+    },
+    "MARKET": {
+      "true_count": 4,
+      "pred_count": 3,
+      "true_conf_mean": 0.707763671875,
+      "true_conf_p90": 0.976212614774704,
+      "pred_conf_mean": 0.9432904124259949,
+      "pred_conf_p90": 0.9770060539245605
+    },
+    "RESTAURANT": {
+      "true_count": 4,
+      "pred_count": 6,
+      "true_conf_mean": 0.9015045166015625,
+      "true_conf_p90": 0.9708744406700134,
+      "pred_conf_mean": 0.7389106154441833,
+      "pred_conf_p90": 0.9703313708305359
+    },
+    "OFFICE": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.8467628955841064,
+      "true_conf_p90": 0.9828865110874176,
+      "pred_conf_mean": 0.8467628955841064,
+      "pred_conf_p90": 0.9828865110874176
+    },
+    "BANK": {
+      "true_count": 4,
+      "pred_count": 4,
+      "true_conf_mean": 0.891779899597168,
+      "true_conf_p90": 0.956886500120163,
+      "pred_conf_mean": 0.891779899597168,
+      "pred_conf_p90": 0.956886500120163
+    },
+    "TODAY": {
+      "true_count": 3,
+      "pred_count": 2,
+      "true_conf_mean": 0.27660268545150757,
+      "true_conf_p90": 0.5354866564273835,
+      "pred_conf_mean": 0.41232830286026,
+      "pred_conf_p90": 0.5765394359827042
+    },
+    "TOMORROW": {
+      "true_count": 3,
+      "pred_count": 3,
+      "true_conf_mean": 0.5289257168769836,
+      "true_conf_p90": 0.8035624504089356,
+      "pred_conf_mean": 0.6261849403381348,
+      "pred_conf_p90": 0.8619179725646973
+    },
+    "YESTERDAY": {
+      "true_count": 3,
+      "pred_count": 3,
+      "true_conf_mean": 0.335784912109375,
+      "true_conf_p90": 0.347192245721817,
+      "pred_conf_mean": 0.3444148004055023,
+      "pred_conf_p90": 0.36322696805000304
+    },
+    "TIME": {
+      "true_count": 3,
+      "pred_count": 3,
+      "true_conf_mean": 0.6831633448600769,
+      "true_conf_p90": 0.9334630250930787,
+      "pred_conf_mean": 0.8853287696838379,
+      "pred_conf_p90": 0.9334630250930787
+    },
+    "DOCTOR": {
+      "true_count": 3,
+      "pred_count": 2,
+      "true_conf_mean": 0.480644553899765,
+      "true_conf_p90": 0.834189510345459,
+      "pred_conf_mean": 0.7178620100021362,
+      "pred_conf_p90": 0.8729653537273407
+    },
+    "MEDICINE": {
+      "true_count": 3,
+      "pred_count": 4,
+      "true_conf_mean": 0.9845827221870422,
+      "true_conf_p90": 0.9922741055488586,
+      "pred_conf_mean": 0.8634668588638306,
+      "pred_conf_p90": 0.9913886189460754
+    },
+    "MONEY": {
+      "true_count": 3,
+      "pred_count": 2,
+      "true_conf_mean": 0.3670361042022705,
+      "true_conf_p90": 0.650152838230133,
+      "pred_conf_mean": 0.49712657928466797,
+      "pred_conf_p90": 0.7067672729492187
+    },
+    "BOOK": {
+      "true_count": 3,
+      "pred_count": 4,
+      "true_conf_mean": 0.7309053540229797,
+      "true_conf_p90": 0.9679294705390931,
+      "pred_conf_mean": 0.8606528639793396,
+      "pred_conf_p90": 0.9613888680934907
+    },
+    "TELEPHONE": {
+      "true_count": 3,
+      "pred_count": 3,
+      "true_conf_mean": 0.4954547584056854,
+      "true_conf_p90": 0.7506965160369873,
+      "pred_conf_mean": 0.601855993270874,
+      "pred_conf_p90": 0.7506965160369873
+    },
+    "BATHROOM": {
+      "true_count": 3,
+      "pred_count": 3,
+      "true_conf_mean": 0.9685344696044922,
+      "true_conf_p90": 0.9789075970649719,
+      "pred_conf_mean": 0.9685344696044922,
+      "pred_conf_p90": 0.9789075970649719
+    }
+  }
+}

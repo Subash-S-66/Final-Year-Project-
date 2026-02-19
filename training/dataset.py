@@ -95,13 +95,16 @@ def split_train_val_by_clip(
     items: list[SampleItem],
     *,
     val_ratio: float = 0.20,
+    min_train_per_label: int = 2,
+    min_val_per_label: int = 1,
     seed: int = 42,
 ) -> tuple[list[SampleItem], list[SampleItem]]:
     """Clip-level split (by .npz file). Not frame-level.
 
-    Uses a label-aware strategy that does not fail when some labels have only 1 sample.
-    - If a label has 1 sample, it stays in train.
-    - If a label has >=2 samples, allocate ~val_ratio (at least 1) to val.
+    Tiny-data aware strategy:
+    - Preserve at least `min_train_per_label` samples for train whenever possible.
+    - Only allocate validation samples when enough clips exist for that label.
+    - Very rare labels stay train-only to avoid fragile train/val fragmentation.
     """
     rng = np.random.default_rng(seed)
     by_label: dict[str, list[SampleItem]] = {}
@@ -116,11 +119,20 @@ def split_train_val_by_clip(
         group = list(by_label[label])
         rng.shuffle(group)
         n = len(group)
-        if n <= 1:
+
+        if n <= max(1, min_train_per_label):
             train.extend(group)
             continue
+
         n_val = int(round(n * val_ratio))
-        n_val = max(1, min(n - 1, n_val))
+        n_val = max(min_val_per_label, n_val)
+
+        max_val = max(0, n - min_train_per_label)
+        n_val = min(n_val, max_val)
+        if n_val <= 0:
+            train.extend(group)
+            continue
+
         val.extend(group[:n_val])
         train.extend(group[n_val:])
 

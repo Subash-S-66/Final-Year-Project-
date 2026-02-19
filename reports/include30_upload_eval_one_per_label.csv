@@ -1,0 +1,31 @@
+label,file,sampled_frames,inferred_windows,committed_token,committed_confidence,final_token,ok,note
+BANK,c:\Users\subash\projects\collage\data\raw\include30\videos\BANK\Places_4of4__MVI_3335.mov,37,8,BANK,0.9724201336503029,BANK,True,
+BATHROOM,c:\Users\subash\projects\collage\data\raw\include30\videos\BATHROOM\Home_2of4__MVI_4378.mov,30,1,BATHROOM,0.98543381690979,BATHROOM,True,
+BOOK,c:\Users\subash\projects\collage\data\raw\include30\videos\BOOK\Home_2of4__MVI_4399.mov,26,1,BOOK,0.9786478281021118,BOOK,True,Not enough sampled frames to fill inference window
+BROTHER,c:\Users\subash\projects\collage\data\raw\include30\videos\BROTHER\People_2of5__MVI_3778.mov,30,1,BROTHER,0.984417200088501,BROTHER,True,
+DOCTOR,c:\Users\subash\projects\collage\data\raw\include30\videos\DOCTOR\Jobs_1of2__MVI_4470.mov,29,1,DOCTOR,0.9855092167854309,DOCTOR,True,Not enough sampled frames to fill inference window
+FAMILY,c:\Users\subash\projects\collage\data\raw\include30\videos\FAMILY\People_3of5__MVI_3787.mov,33,4,FAMILY,0.9887208342552185,FAMILY,True,
+FATHER,c:\Users\subash\projects\collage\data\raw\include30\videos\FATHER\People_1of5__MVI_3763.mov,26,1,FATHER,0.973983108997345,FATHER,True,Not enough sampled frames to fill inference window
+FRIEND,c:\Users\subash\projects\collage\data\raw\include30\videos\FRIEND\People_5of5__MVI_3826.mov,31,2,FRIEND,0.8539559543132782,FRIEND,True,
+GOOD_MORNING,c:\Users\subash\projects\collage\data\raw\include30\videos\GOOD_MORNING\Greetings_1of2__MVI_0042.mov,43,14,GOOD_MORNING,0.9639110565185547,GOOD_MORNING,True,
+GOOD_NIGHT,c:\Users\subash\projects\collage\data\raw\include30\videos\GOOD_NIGHT\Greetings_2of2__MVI_0002.mov,28,1,GOOD_NIGHT,0.9659251570701599,GOOD_NIGHT,True,Not enough sampled frames to fill inference window
+HELLO,c:\Users\subash\projects\collage\data\raw\include30\videos\HELLO\Greetings_1of2__MVI_0029.mov,32,3,HELLO,0.9296184579531351,HELLO,True,
+HOSPITAL,c:\Users\subash\projects\collage\data\raw\include30\videos\HOSPITAL\Places_3of4__MVI_3315.mov,41,12,HOSPITAL,0.9641174435615539,HOSPITAL,True,
+HOUSE,c:\Users\subash\projects\collage\data\raw\include30\videos\HOUSE\Places_1of4__MVI_3267.mov,39,10,HOUSE,0.967861121892929,HOUSE,True,
+I,c:\Users\subash\projects\collage\data\raw\include30\videos\I\Pronouns_1of2__MVI_0012.mov,23,1,I,0.9776130318641663,I,True,Not enough sampled frames to fill inference window
+MARKET,c:\Users\subash\projects\collage\data\raw\include30\videos\MARKET\Places_3of4__MVI_3323.mov,35,6,MARKET,0.9744357864061991,MARKET,True,
+MEDICINE,c:\Users\subash\projects\collage\data\raw\include30\videos\MEDICINE\Society_1of3__MVI_4259.mov,34,5,MEDICINE,0.9697448253631592,MEDICINE,True,
+MONEY,c:\Users\subash\projects\collage\data\raw\include30\videos\MONEY\Society_1of3__MVI_4263.mov,24,1,MONEY,0.9862090349197388,MONEY,True,Not enough sampled frames to fill inference window
+MOTHER,c:\Users\subash\projects\collage\data\raw\include30\videos\MOTHER\People_1of5__MVI_3760.mov,25,1,MOTHER,0.9791885018348694,MOTHER,True,Not enough sampled frames to fill inference window
+OFFICE,c:\Users\subash\projects\collage\data\raw\include30\videos\OFFICE\Places_2of4__MVI_3294.mov,40,11,OFFICE,0.9614242911338806,OFFICE,True,
+RESTAURANT,c:\Users\subash\projects\collage\data\raw\include30\videos\RESTAURANT\Places_1of4__MVI_3280.mov,35,6,RESTAURANT,0.9336224913597106,RESTAURANT,True,
+SCHOOL,c:\Users\subash\projects\collage\data\raw\include30\videos\SCHOOL\Places_2of4__MVI_3290.mov,36,7,SCHOOL,0.9790446162223816,SCHOOL,True,
+SISTER,c:\Users\subash\projects\collage\data\raw\include30\videos\SISTER\People_2of5__MVI_3782.mov,28,1,SISTER,0.9819221496582031,SISTER,True,Not enough sampled frames to fill inference window
+TELEPHONE,c:\Users\subash\projects\collage\data\raw\include30\videos\TELEPHONE\Home_3of4__MVI_4428.mov,21,1,TELEPHONE,0.9809879064559937,TELEPHONE,True,Not enough sampled frames to fill inference window
+THANK_YOU,c:\Users\subash\projects\collage\data\raw\include30\videos\THANK_YOU\Greetings_2of2__MVI_0006.mov,27,1,THANK_YOU,0.9775616526603699,THANK_YOU,True,Not enough sampled frames to fill inference window
+TIME,c:\Users\subash\projects\collage\data\raw\include30\videos\TIME\Days_and_Time_3of3__MVI_4667.mov,29,1,TIME,0.9495016932487488,TIME,True,Not enough sampled frames to fill inference window
+TODAY,c:\Users\subash\projects\collage\data\raw\include30\videos\TODAY\Days_and_Time_1of3__MVI_4615.mov,31,2,TODAY,0.3084288090467453,TODAY,True,
+TOMORROW,c:\Users\subash\projects\collage\data\raw\include30\videos\TOMORROW\Days_and_Time_2of3__MVI_4619.mov,27,1,TOMORROW,0.9844486713409424,TOMORROW,True,Not enough sampled frames to fill inference window
+WE,c:\Users\subash\projects\collage\data\raw\include30\videos\WE\Pronouns_2of2__MVI_0017.mov,42,13,WE,0.9565903067588806,WE,True,
+YESTERDAY,c:\Users\subash\projects\collage\data\raw\include30\videos\YESTERDAY\Days_and_Time_2of3__MVI_4623.mov,25,1,TOMORROW,0.6750465631484985,TOMORROW,False,Not enough sampled frames to fill inference window
+YOU,c:\Users\subash\projects\collage\data\raw\include30\videos\YOU\Pronouns_1of2__MVI_0015.mov,23,1,YOU,0.9757612943649292,YOU,True,Not enough sampled frames to fill inference window

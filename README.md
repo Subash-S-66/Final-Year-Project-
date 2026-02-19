@@ -32,3 +32,22 @@ uvicorn app.main:app --app-dir backend --reload --host 0.0.0.0 --port 8000
 - http://localhost:8000/health
 
 Docs for the streaming protocol and dataset standards are in `docs/`.
+
+## Deploy on Azure
+
+This repo includes Azure Container Apps deployment assets for both backend and frontend.
+
+- Backend Dockerfile: `backend/Dockerfile`
+- Frontend Dockerfile: `frontend/Dockerfile`
+- Deployment script: `deploy/azure/deploy-container-apps.ps1`
+- Deployment guide: `deploy/azure/README.md`
+
+Quick deploy (PowerShell, from repo root):
+
+```powershell
+.\deploy\azure\deploy-container-apps.ps1 `
+  -SubscriptionId "<your-subscription-id>" `
+  -ResourceGroup "isl-collage-rg" `
+  -Location "eastus" `
+  -AcrName "<globally-unique-acr-name>"
+```

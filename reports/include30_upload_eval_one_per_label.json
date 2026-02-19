@@ -1,0 +1,352 @@
+{
+  "mode": "one_per_label_upload_path",
+  "total": 30,
+  "correct": 29,
+  "accuracy": 0.9666666666666667,
+  "no_sign": 0,
+  "mismatches": [
+    {
+      "label": "YESTERDAY",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\YESTERDAY\\Days_and_Time_2of3__MVI_4623.mov",
+      "sampled_frames": 25,
+      "inferred_windows": 1,
+      "committed_token": "TOMORROW",
+      "committed_confidence": 0.6750465631484985,
+      "final_token": "TOMORROW",
+      "ok": false,
+      "note": "Not enough sampled frames to fill inference window"
+    }
+  ],
+  "rows": [
+    {
+      "label": "BANK",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\BANK\\Places_4of4__MVI_3335.mov",
+      "sampled_frames": 37,
+      "inferred_windows": 8,
+      "committed_token": "BANK",
+      "committed_confidence": 0.9724201336503029,
+      "final_token": "BANK",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "BATHROOM",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\BATHROOM\\Home_2of4__MVI_4378.mov",
+      "sampled_frames": 30,
+      "inferred_windows": 1,
+      "committed_token": "BATHROOM",
+      "committed_confidence": 0.98543381690979,
+      "final_token": "BATHROOM",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "BOOK",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\BOOK\\Home_2of4__MVI_4399.mov",
+      "sampled_frames": 26,
+      "inferred_windows": 1,
+      "committed_token": "BOOK",
+      "committed_confidence": 0.9786478281021118,
+      "final_token": "BOOK",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "BROTHER",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\BROTHER\\People_2of5__MVI_3778.mov",
+      "sampled_frames": 30,
+      "inferred_windows": 1,
+      "committed_token": "BROTHER",
+      "committed_confidence": 0.984417200088501,
+      "final_token": "BROTHER",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "DOCTOR",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\DOCTOR\\Jobs_1of2__MVI_4470.mov",
+      "sampled_frames": 29,
+      "inferred_windows": 1,
+      "committed_token": "DOCTOR",
+      "committed_confidence": 0.9855092167854309,
+      "final_token": "DOCTOR",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "FAMILY",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\FAMILY\\People_3of5__MVI_3787.mov",
+      "sampled_frames": 33,
+      "inferred_windows": 4,
+      "committed_token": "FAMILY",
+      "committed_confidence": 0.9887208342552185,
+      "final_token": "FAMILY",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "FATHER",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\FATHER\\People_1of5__MVI_3763.mov",
+      "sampled_frames": 26,
+      "inferred_windows": 1,
+      "committed_token": "FATHER",
+      "committed_confidence": 0.973983108997345,
+      "final_token": "FATHER",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "FRIEND",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\FRIEND\\People_5of5__MVI_3826.mov",
+      "sampled_frames": 31,
+      "inferred_windows": 2,
+      "committed_token": "FRIEND",
+      "committed_confidence": 0.8539559543132782,
+      "final_token": "FRIEND",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "GOOD_MORNING",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\GOOD_MORNING\\Greetings_1of2__MVI_0042.mov",
+      "sampled_frames": 43,
+      "inferred_windows": 14,
+      "committed_token": "GOOD_MORNING",
+      "committed_confidence": 0.9639110565185547,
+      "final_token": "GOOD_MORNING",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "GOOD_NIGHT",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\GOOD_NIGHT\\Greetings_2of2__MVI_0002.mov",
+      "sampled_frames": 28,
+      "inferred_windows": 1,
+      "committed_token": "GOOD_NIGHT",
+      "committed_confidence": 0.9659251570701599,
+      "final_token": "GOOD_NIGHT",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "HELLO",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\HELLO\\Greetings_1of2__MVI_0029.mov",
+      "sampled_frames": 32,
+      "inferred_windows": 3,
+      "committed_token": "HELLO",
+      "committed_confidence": 0.9296184579531351,
+      "final_token": "HELLO",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "HOSPITAL",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\HOSPITAL\\Places_3of4__MVI_3315.mov",
+      "sampled_frames": 41,
+      "inferred_windows": 12,
+      "committed_token": "HOSPITAL",
+      "committed_confidence": 0.9641174435615539,
+      "final_token": "HOSPITAL",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "HOUSE",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\HOUSE\\Places_1of4__MVI_3267.mov",
+      "sampled_frames": 39,
+      "inferred_windows": 10,
+      "committed_token": "HOUSE",
+      "committed_confidence": 0.967861121892929,
+      "final_token": "HOUSE",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "I",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\I\\Pronouns_1of2__MVI_0012.mov",
+      "sampled_frames": 23,
+      "inferred_windows": 1,
+      "committed_token": "I",
+      "committed_confidence": 0.9776130318641663,
+      "final_token": "I",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "MARKET",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\MARKET\\Places_3of4__MVI_3323.mov",
+      "sampled_frames": 35,
+      "inferred_windows": 6,
+      "committed_token": "MARKET",
+      "committed_confidence": 0.9744357864061991,
+      "final_token": "MARKET",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "MEDICINE",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\MEDICINE\\Society_1of3__MVI_4259.mov",
+      "sampled_frames": 34,
+      "inferred_windows": 5,
+      "committed_token": "MEDICINE",
+      "committed_confidence": 0.9697448253631592,
+      "final_token": "MEDICINE",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "MONEY",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\MONEY\\Society_1of3__MVI_4263.mov",
+      "sampled_frames": 24,
+      "inferred_windows": 1,
+      "committed_token": "MONEY",
+      "committed_confidence": 0.9862090349197388,
+      "final_token": "MONEY",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "MOTHER",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\MOTHER\\People_1of5__MVI_3760.mov",
+      "sampled_frames": 25,
+      "inferred_windows": 1,
+      "committed_token": "MOTHER",
+      "committed_confidence": 0.9791885018348694,
+      "final_token": "MOTHER",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "OFFICE",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\OFFICE\\Places_2of4__MVI_3294.mov",
+      "sampled_frames": 40,
+      "inferred_windows": 11,
+      "committed_token": "OFFICE",
+      "committed_confidence": 0.9614242911338806,
+      "final_token": "OFFICE",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "RESTAURANT",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\RESTAURANT\\Places_1of4__MVI_3280.mov",
+      "sampled_frames": 35,
+      "inferred_windows": 6,
+      "committed_token": "RESTAURANT",
+      "committed_confidence": 0.9336224913597106,
+      "final_token": "RESTAURANT",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "SCHOOL",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\SCHOOL\\Places_2of4__MVI_3290.mov",
+      "sampled_frames": 36,
+      "inferred_windows": 7,
+      "committed_token": "SCHOOL",
+      "committed_confidence": 0.9790446162223816,
+      "final_token": "SCHOOL",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "SISTER",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\SISTER\\People_2of5__MVI_3782.mov",
+      "sampled_frames": 28,
+      "inferred_windows": 1,
+      "committed_token": "SISTER",
+      "committed_confidence": 0.9819221496582031,
+      "final_token": "SISTER",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "TELEPHONE",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\TELEPHONE\\Home_3of4__MVI_4428.mov",
+      "sampled_frames": 21,
+      "inferred_windows": 1,
+      "committed_token": "TELEPHONE",
+      "committed_confidence": 0.9809879064559937,
+      "final_token": "TELEPHONE",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "THANK_YOU",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\THANK_YOU\\Greetings_2of2__MVI_0006.mov",
+      "sampled_frames": 27,
+      "inferred_windows": 1,
+      "committed_token": "THANK_YOU",
+      "committed_confidence": 0.9775616526603699,
+      "final_token": "THANK_YOU",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "TIME",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\TIME\\Days_and_Time_3of3__MVI_4667.mov",
+      "sampled_frames": 29,
+      "inferred_windows": 1,
+      "committed_token": "TIME",
+      "committed_confidence": 0.9495016932487488,
+      "final_token": "TIME",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "TODAY",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\TODAY\\Days_and_Time_1of3__MVI_4615.mov",
+      "sampled_frames": 31,
+      "inferred_windows": 2,
+      "committed_token": "TODAY",
+      "committed_confidence": 0.3084288090467453,
+      "final_token": "TODAY",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "TOMORROW",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\TOMORROW\\Days_and_Time_2of3__MVI_4619.mov",
+      "sampled_frames": 27,
+      "inferred_windows": 1,
+      "committed_token": "TOMORROW",
+      "committed_confidence": 0.9844486713409424,
+      "final_token": "TOMORROW",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "WE",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\WE\\Pronouns_2of2__MVI_0017.mov",
+      "sampled_frames": 42,
+      "inferred_windows": 13,
+      "committed_token": "WE",
+      "committed_confidence": 0.9565903067588806,
+      "final_token": "WE",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "label": "YESTERDAY",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\YESTERDAY\\Days_and_Time_2of3__MVI_4623.mov",
+      "sampled_frames": 25,
+      "inferred_windows": 1,
+      "committed_token": "TOMORROW",
+      "committed_confidence": 0.6750465631484985,
+      "final_token": "TOMORROW",
+      "ok": false,
+      "note": "Not enough sampled frames to fill inference window"
+    },
+    {
+      "label": "YOU",
+      "file": "c:\\Users\\subash\\projects\\collage\\data\\raw\\include30\\videos\\YOU\\Pronouns_1of2__MVI_0015.mov",
+      "sampled_frames": 23,
+      "inferred_windows": 1,
+      "committed_token": "YOU",
+      "committed_confidence": 0.9757612943649292,
+      "final_token": "YOU",
+      "ok": true,
+      "note": "Not enough sampled frames to fill inference window"
+    }
+  ]
+}

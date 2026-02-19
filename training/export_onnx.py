@@ -65,6 +65,7 @@ def main() -> int:
         output_names=["logits"],
         opset_version=17,
         do_constant_folding=True,
+        dynamo=False,  # More stable on Windows for external-data ONNX export.
         dynamic_axes={
             "input": {0: "batch"},
             "logits": {0: "batch"},
@@ -91,6 +92,10 @@ def main() -> int:
             "num_classes": len(vocab),
             "vocab": vocab,
             "config": ckpt.get("config", {}),
+            "preprocess": ckpt.get("preprocess", {}),
+            "temperature": float(ckpt.get("temperature", 1.0)),
+            "calibration": ckpt.get("calibration", {}),
+            "acceptance": ckpt.get("acceptance", {}),
         }
         meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
         print(f"Wrote metadata: {meta_path}")

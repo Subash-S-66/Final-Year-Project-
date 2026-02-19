@@ -1,0 +1,22 @@
+.git
+.github
+.venv
+.vscode
+.trash_reports
+node_modules
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Large local-only artifacts not needed for deployment builds
+data
+reports
+docs
+training
+tools
+test_client.html
+
+# Frontend build output
+frontend/node_modules
+frontend/dist

@@ -1,9 +1,28 @@
-# Frontend (React)
+# Frontend (React 18 + Tailwind)
 
-We will scaffold a React app in a later phase.
+## Run
 
-Responsibilities:
-- WebRTC webcam capture
-- frame sampling + JPEG/WebP encoding
-- WebSocket streaming
-- render live + committed text
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Default backend WebSocket URL is `ws://localhost:8000/ws`.
+
+Set a custom URL by either:
+
+1. Defining `VITE_WS_URL` in your environment, or
+2. Editing it in the UI input at runtime.
+
+## Included
+
+- WebRTC webcam capture (`getUserMedia`)
+- Frame sampling + JPEG encoding
+- WebSocket streaming to backend
+- Live/unstable and committed prediction views
+- Debounce stabilization UI and sentence builder
+- Confidence tier colors and performance metrics
+- Live log viewer (`Check Logs`) for WebSocket/prediction events
+- Uploaded video testing panel using `/predict/video`
+- Theme toggle, responsive layout, and ARIA labels

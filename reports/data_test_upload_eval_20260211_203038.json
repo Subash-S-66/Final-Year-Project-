@@ -1,0 +1,242 @@
+﻿[
+    {
+        "label":  "BANK",
+        "file":  "Places_4of4__MVI_3335.mov",
+        "final_token":  "BANK",
+        "final_confidence":  0.97242,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "BATHROOM",
+        "file":  "Home_2of4__MVI_4378.mov",
+        "final_token":  "BATHROOM",
+        "final_confidence":  0.985434,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "BOOK",
+        "file":  "Home_2of4__MVI_4399.mov",
+        "final_token":  "BOOK",
+        "final_confidence":  0.978648,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "BROTHER",
+        "file":  "People_2of5__MVI_3778.mov",
+        "final_token":  "BROTHER",
+        "final_confidence":  0.984417,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "DOCTOR",
+        "file":  "Jobs_1of2__MVI_4470.mov",
+        "final_token":  "DOCTOR",
+        "final_confidence":  0.985509,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "FAMILY",
+        "file":  "People_3of5__MVI_3787.mov",
+        "final_token":  "FAMILY",
+        "final_confidence":  0.988721,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "FATHER",
+        "file":  "People_1of5__MVI_3763.mov",
+        "final_token":  "FATHER",
+        "final_confidence":  0.973983,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "FRIEND",
+        "file":  "People_5of5__MVI_3826.mov",
+        "final_token":  "FRIEND",
+        "final_confidence":  0.853956,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "GOOD_MORNING",
+        "file":  "Greetings_1of2__MVI_0042.mov",
+        "final_token":  "GOOD_MORNING",
+        "final_confidence":  0.963911,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "GOOD_NIGHT",
+        "file":  "Greetings_2of2__MVI_0002.mov",
+        "final_token":  "GOOD_NIGHT",
+        "final_confidence":  0.965925,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "HELLO",
+        "file":  "Greetings_1of2__MVI_0029.mov",
+        "final_token":  "HELLO",
+        "final_confidence":  0.929618,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "HOSPITAL",
+        "file":  "Places_3of4__MVI_3315.mov",
+        "final_token":  "HOSPITAL",
+        "final_confidence":  0.964117,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "HOUSE",
+        "file":  "Places_1of4__MVI_3267.mov",
+        "final_token":  "HOUSE",
+        "final_confidence":  0.967861,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "I",
+        "file":  "Pronouns_1of2__MVI_0012.mov",
+        "final_token":  "I",
+        "final_confidence":  0.977613,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "MARKET",
+        "file":  "Places_3of4__MVI_3323.mov",
+        "final_token":  "MARKET",
+        "final_confidence":  0.974436,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "MEDICINE",
+        "file":  "Society_1of3__MVI_4259.mov",
+        "final_token":  "MEDICINE",
+        "final_confidence":  0.969745,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "MONEY",
+        "file":  "Society_1of3__MVI_4263.mov",
+        "final_token":  "MONEY",
+        "final_confidence":  0.986209,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "MOTHER",
+        "file":  "People_1of5__MVI_3760.mov",
+        "final_token":  "MOTHER",
+        "final_confidence":  0.979189,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "OFFICE",
+        "file":  "Places_2of4__MVI_3294.mov",
+        "final_token":  "OFFICE",
+        "final_confidence":  0.961424,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "RESTAURANT",
+        "file":  "Places_1of4__MVI_3280.mov",
+        "final_token":  "RESTAURANT",
+        "final_confidence":  0.933622,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "SCHOOL",
+        "file":  "Places_2of4__MVI_3290.mov",
+        "final_token":  "SCHOOL",
+        "final_confidence":  0.979045,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "SISTER",
+        "file":  "People_2of5__MVI_3782.mov",
+        "final_token":  "SISTER",
+        "final_confidence":  0.981922,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "TELEPHONE",
+        "file":  "Home_3of4__MVI_4428.mov",
+        "final_token":  "TELEPHONE",
+        "final_confidence":  0.980988,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "THANK_YOU",
+        "file":  "Greetings_2of2__MVI_0006.mov",
+        "final_token":  "THANK_YOU",
+        "final_confidence":  0.977562,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "TIME",
+        "file":  "Days_and_Time_3of3__MVI_4667.mov",
+        "final_token":  "TIME",
+        "final_confidence":  0.949502,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "TODAY",
+        "file":  "Days_and_Time_1of3__MVI_4615.mov",
+        "final_token":  "TODAY",
+        "final_confidence":  0.308429,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "TOMORROW",
+        "file":  "Days_and_Time_2of3__MVI_4619.mov",
+        "final_token":  "TOMORROW",
+        "final_confidence":  0.984449,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "WE",
+        "file":  "Pronouns_2of2__MVI_0017.mov",
+        "final_token":  "WE",
+        "final_confidence":  0.95659,
+        "is_correct":  true,
+        "error":  ""
+    },
+    {
+        "label":  "YESTERDAY",
+        "file":  "Days_and_Time_2of3__MVI_4623.mov",
+        "final_token":  "TOMORROW",
+        "final_confidence":  0.675047,
+        "is_correct":  false,
+        "error":  ""
+    },
+    {
+        "label":  "YOU",
+        "file":  "Pronouns_1of2__MVI_0015.mov",
+        "final_token":  "YOU",
+        "final_confidence":  0.975761,
+        "is_correct":  true,
+        "error":  ""
+    }
+]
