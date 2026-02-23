@@ -1,0 +1,2 @@
+# Root requirements for backend local run
+-r backend/requirements.txt

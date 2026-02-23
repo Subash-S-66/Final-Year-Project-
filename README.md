@@ -13,12 +13,19 @@ We are building this in phases.
 
 ## Quick start (Backend)
 
-1) Create and activate a Python environment.
+1) One-command run (creates `backend/.venv`, installs backend deps, starts API):
 
-2) Install dependencies:
+```powershell
+.\run-backend.ps1
+```
+
+2) Manual setup:
+
+- Create and activate a Python environment.
+- Install dependencies:
 
 ```bash
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 3) Run the API:
